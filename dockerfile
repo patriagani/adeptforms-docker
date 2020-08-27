@@ -49,8 +49,7 @@ RUN apt-get update && apt-get install -y vim \
     #&& cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini \
     #&& echo "extension=mongodb.so" >> /usr/local/etc/php/php.ini \
     && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*\
-	&& systemctl restart apache2
+    && rm -rf /var/lib/apt/lists/*
 
 ENV APACHE_RUN_USER www-data
 ENV APACHE_RUN_GROUP www-data
