@@ -48,12 +48,13 @@ RUN apt-get update && apt-get install -y vim \
     && rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends openssl libssl-dev libcurl4-openssl-dev \
+    #&& apt-get install -y --no-install-recommends openssl libssl-dev libcurl4-openssl-dev \
     && pecl install mongodb \
     #&& cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini \
     #&& echo "extension=mongodb.so" >> /usr/local/etc/php/php.ini \
     && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/*\
+	&& systemctl restart apache2
 
 ENV APACHE_RUN_USER www-data
 ENV APACHE_RUN_GROUP www-data
