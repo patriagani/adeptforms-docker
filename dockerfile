@@ -46,7 +46,9 @@ RUN apt-get update && apt-get install -y vim \
 	&& apt-get install -y build-essential\
 	&& apt-get install -y --no-install-recommends openssl libssl-dev libcurl4-openssl-dev \
     && pecl install mongodb \
+	&& apt-get -y install php7.2-phalcon\
     && echo "extension=mongodb.so" >> /etc/php/7.2/apache2/php.ini \
+    && echo "extension=phalcon.so" >> /etc/php/7.2/apache2/php.ini \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
