@@ -43,12 +43,7 @@ RUN a2ensite site.conf
 RUN a2dissite 000-default.conf
 
 RUN apt-get update && apt-get install -y vim \
-	
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
-
-RUN apt-get update \
-    #&& apt-get install -y --no-install-recommends openssl libssl-dev libcurl4-openssl-dev \
+	#&& apt-get install -y --no-install-recommends openssl libssl-dev libcurl4-openssl-dev \
     && pecl install mongodb \
     #&& cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini \
     #&& echo "extension=mongodb.so" >> /usr/local/etc/php/php.ini \
