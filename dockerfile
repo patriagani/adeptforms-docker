@@ -48,7 +48,7 @@ RUN apt-get update && apt-get install -y vim \
     && pecl install mongodb \
 	&& curl -s https://packagecloud.io/install/repositories/phalcon/stable/script.deb.sh | bash \
 	#&& apt-get -y install php-phalcon4\
-	&& apt-get -y install php7.0-phalcon\
+	&& apt-get -y install php7.2-phalcon\
     && echo "extension=mongodb.so" >> /etc/php/7.2/apache2/php.ini \
     && echo "extension=phalcon.so" >> /etc/php/7.2/apache2/php.ini \
     && apt-get clean \
