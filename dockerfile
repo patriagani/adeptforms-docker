@@ -45,7 +45,7 @@ RUN a2dissite 000-default.conf
 RUN apt-get update && apt-get install -y vim \
 	&& apt-get install -y build-essential\
 	&& apt-get install -y --no-install-recommends openssl libssl-dev libcurl4-openssl-dev \
-    && sudo apt-get install -y php7.2-mongodb \
+    && apt-get install -y php7.2-mongodb \
 	&& curl -s https://packagecloud.io/install/repositories/phalcon/stable/script.deb.sh | bash \
 	&& apt-get -y install php7.2-phalcon3\
     && apt-get clean \
