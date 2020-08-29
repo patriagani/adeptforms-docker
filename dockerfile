@@ -41,7 +41,7 @@ ADD apache-conf.conf /etc/apache2/sites-available/site.conf
 
 RUN a2ensite site.conf
 RUN a2dissite 000-default.conf
-RUN sed -i 's/80/${PORT}/g' /etc/apache2/sites-available/site.conf /etc/apache2/ports.conf
+#RUN sed -i 's/80/${PORT}/g' /etc/apache2/sites-available/site.conf /etc/apache2/ports.conf
 
 RUN apt-get update && apt-get install -y vim \
 	&& apt-get install -y build-essential\
