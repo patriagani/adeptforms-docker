@@ -49,6 +49,7 @@ RUN apt-get update && apt-get install -y vim \
     && apt-get install -y php7.2-mongodb \
 	&& curl -s https://packagecloud.io/install/repositories/phalcon/stable/script.deb.sh | bash \
 	&& apt-get -y install php7.2-phalcon3\
+	&& apt-get -y install php7.2-gd\
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
